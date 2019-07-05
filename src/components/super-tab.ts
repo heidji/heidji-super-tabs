@@ -104,6 +104,13 @@ export class SuperTabComponent extends NavControllerBase implements OnInit, Afte
   get swipeBackEnabled(): boolean {
     return this._sbEnabled;
   }
+  
+  
+    /**
+     * Notification index
+     */
+    @Input()
+    botIndex: number;
 
   set swipeBackEnabled(val: boolean) {
     this._sbEnabled = Boolean(val);

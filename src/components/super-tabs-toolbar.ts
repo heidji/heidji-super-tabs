@@ -26,7 +26,7 @@ import { SuperTabsConfig } from './super-tabs';
         <div *ngIf="tabsPlacement === 'bottom'" class="indicator {{ 'button-md-' + indicatorColor }}" #indicator></div>
         <div class="tab-buttons" #tabButtons>
           <super-tab-button *ngFor="let tab of tabs; let i = index" (select)="onTabSelect(i)" [title]="tab.title"
-                            [icon]="tab.icon" [badge]="tab.badge" [selected]="selectedTab === i" [color]="tabsColor"
+                            [icon]="tab.icon" [botIndex]="tab.botIndex" [badge]="tab.badge" [selected]="selectedTab === i" [color]="tabsColor"
                             [badgeColor]="badgeColor"></super-tab-button>
         </div>
         <div *ngIf="tabsPlacement === 'top'" class="indicator {{ 'button-md-' + indicatorColor }}" #indicator></div>

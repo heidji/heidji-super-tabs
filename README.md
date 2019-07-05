@@ -3,6 +3,8 @@
 [![npm](https://img.shields.io/npm/dt/ionic2-super-tabs.svg)](https://www.npmjs.com/package/ionic2-super-tabs)
 [![npm](https://img.shields.io/npm/dm/ionic2-super-tabs.svg)](https://www.npmjs.com/package/ionic2-super-tabs)
 
+**MODIFIED PACKAGE! PLEASE LOOK UP IONIC-SUPER-TABS FOR THE ORIGINAL PROJECT** -heidji
+
 Swipeable tabs that can be your main navigation, or just a part of your page.
 
 To see this in action, checkout the [example project here](https://github.com/zyra/ionic2-super-tabs-example).

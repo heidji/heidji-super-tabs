@@ -117,12 +117,12 @@ export class SuperTabsComponent
   /**
    * Color of the slider that moves based on what tab is selected
    */
-  @Input() indicatorColor = 'primary';
+  @Input() indicatorColor = 'supertab';
 
   /**
    * Badge color
    */
-  @Input() badgeColor = 'primary';
+  @Input() badgeColor = 'supertab';
 
   /**
    * Configuration
@@ -276,6 +276,8 @@ export class SuperTabsComponent
    * @private
    */
   private hasTitles = false;
+  
+  private hasTitleAndIcon: boolean = false;
 
   /**
    * Indicates whether the component has finished initializing
@@ -525,6 +527,10 @@ export class SuperTabsComponent
     if (tab.title) {
       this.hasTitles = true;
     }
+    
+    if(tab.icon && tab.title){
+            this.hasTitleAndIcon = true;
+        }
 
     tab.setWidth(this.el.nativeElement.offsetWidth);
   }
@@ -685,7 +691,15 @@ export class SuperTabsComponent
   }
 
   private refreshContainerHeight() {
-    const heightOffset = this._isToolbarVisible ? this.toolbar.height : 0;
+    var heightOffset = this._isToolbarVisible ? this.toolbar.height : 0;
+    
+    if (this._isToolbarVisible) {
+            if (this.hasTitleAndIcon) {
+                heightOffset = 56;
+            } else if (this.hasTitles || this.hasIcons) {
+                heightOffset = 48;
+            }
+        }
 
     this.rnd.setStyle(
       this.tabsContainer.getNativeElement(),

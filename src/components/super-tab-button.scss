@@ -1,0 +1,23 @@
+super-tab-button {
+  .botindex{
+    padding: 1px;
+    background: red;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    position: absolute;
+    right: calc(50% - 30px);
+    bottom: 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    color: white;
+  }
+  .icon_container {
+    display: inline-block;
+    position: relative;
+  }
+  .selected > span{
+    color: #0c6c63 !important;
+    font-weight: bold;
+  }
+}

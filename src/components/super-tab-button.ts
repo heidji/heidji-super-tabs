@@ -11,10 +11,13 @@ import {
 @Component({
   selector: 'super-tab-button',
   template: `
-    <ion-icon *ngIf="!!icon" [name]="icon" [color]="color"></ion-icon>
+    <div class="icon_container">
+        <ion-icon *ngIf="!!icon" [name]="icon" [color]="color"></ion-icon>
+    </div>
     <span class="title" *ngIf="!!title" ion-text [color]="color">{{ title }}</span>
     <ion-badge mode="md" [color]="badgeColor">{{ badge }}</ion-badge>
     <div class="button-effect"></div>
+    <label *ngIf="botIndex > 0" class="botindex">{{botIndex < 100 ? botIndex : 99}}</label>
   `,
   host: {
     '[class.selected]': 'selected',
@@ -47,6 +50,9 @@ export class SuperTabButtonComponent {
 
   @Input()
   color: string;
+
+    @Input()
+    botIndex: number;
 
   @Output()
   select: EventEmitter<SuperTabButtonComponent> = new EventEmitter<SuperTabButtonComponent>();
